@@ -1,0 +1,197 @@
+/* Fondo de la página con una imagen de galaxia */
+body {
+    background: url('images/galaxy.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative; /* Para que ::after funcione correctamente */
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Superposición oscura */
+    z-index: -1;
+}
+
+
+/* Contenedor de las tarjetas con perspectiva para el efecto 3D */
+.card-container {
+    perspective: 1000px;
+}
+
+/* Estilos de la tarjeta con efectos mágicos */
+.card {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+
+/* Efecto de voltear la tarjeta */
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+/* Estilos para las caras de la tarjeta */
+.card .front, .card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    /* border: 2px solid #ffffff; */ /* Borde eliminado */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Frente de la tarjeta con efectos de brillo */
+.card .front {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Parte trasera de la tarjeta con fondo galáctico */
+.card .back {
+    background: radial-gradient(circle, #584192, #120041);
+    color: #ffffff;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo del mensaje con fondo semitransparente */
+#messageText {
+    font-size: 1.2rem;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    
+}
+
+/* Contenedor de los botones con fondo degradado */
+.buttons-container {
+    
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); */
+}
+
+/* Estilo de los botones */
+.buttons-container .btn {
+    width: 60px;
+    height: 60px; 
+    border: none;
+    border-radius: 50%;
+    /* font-size: 1.5rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: radial-gradient(circle, #009ac5, #0252b4); /* Hacer el fondo transparente */
+    color: #ffffff; /* Color del icono */
+    border: 1px solid #ffffff; /* Añadir borde para definir el botón */
+}
+
+
+/* Hover Effects para los botones */
+.buttons-container .btn-primary:hover,
+.buttons-container .btn-secondary:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+/* Estilo del texto "Play" */
+.play-text {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 0 20px;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* Tipografía para títulos */
+.text-center h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+}
+
+/* Subtítulo */
+.text-center p {
+    font-size: 1.2rem;
+    color: #ececec;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .card {
+        width: 260px;
+        height: 260px;
+    }
+
+    .buttons-container {
+        flex-direction: row; /* Mantener los elementos en una fila */
+        flex-wrap: nowrap; /* Evitar que los elementos se envuelvan a la siguiente línea */
+        padding: 10px 20px;
+    }
+
+    .icon-button {
+        width: 40px; /* Reducir el tamaño del botón */
+        height: 40px;
+        margin: 0 5px; /* Ajustar márgenes para ahorrar espacio */
+    }
+
+    .icon-button .icon {
+        width: 20px; /* Reducir el tamaño del icono */
+        height: 20px;
+    }
+
+    .play-text {
+        font-size: 1rem; /* Reducir el tamaño del texto */
+        margin: 0 10px; /* Ajustar márgenes */
+    }
+
+    .text-center h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-center p {
+        font-size: 1rem;
+    }
+
+    #messageText {
+        font-size: 1rem;
+    }
+
+    .buttons-container .icon-button {
+        /* Asegurarse de que los botones no tengan padding adicional */
+        padding: 0;
+    }
+}
+
+
+
