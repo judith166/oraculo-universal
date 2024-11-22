@@ -27,4 +27,19 @@ Puedes ver y probar la aplicación en vivo a través del siguiente enlace:
 - **JavaScript:** Funcionalidad interactiva y manejo de eventos.
 - **Bootstrap 5:** Framework CSS para diseño responsivo y componentes.
 - **GitHub Pages:** Hospedaje gratuito para sitios estáticos.
-- **Font Awesome (opcional):** Iconografía utilizada en la aplicación.
+
+## 🧩 Uso
+
+### Visualizar la Aplicación
+
+- **Abre la aplicación** en tu navegador web.
+[https://judith166.github.io/oraculo-universal/](https://judith166.github.io/oraculo-universal/)
+
+### Interactuar con la Carta
+
+1. **Haz clic en el botón de "Play"** para revelar el mensaje del día.
+2. **Observa la animación de balanceo** que realizará la carta antes de voltearse, mostrando el mensaje en la parte trasera.
+
+### Resetear la Carta
+
+- **Después de ver el mensaje**, puedes hacer clic en el botón de "Undo" para volver a la vista inicial y tirar de nuevo.
